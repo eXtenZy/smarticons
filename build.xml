@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SmartIcons" default="build" basedir=".">
+	<description>Ant Build File for Joomla</description>
+
+	<property name="cfg.name" value="smarticons" />
+	<property name="cfg.localhostRoot" value="../joomla35" />
+	<property name="cfg.buildDir" value="packages" />
+	<property name="cfg.xmlfile" value="${cfg.buildDir}/files.txt" />
+
+
+	<!--config file values
+        cfg.name=paket
+        cfg.versionDir=v1_50
+        cfg.buildDir=packages
+        cfg.localhostRoot=../../www
+        cfg.xmlfile=files.txt
+ 
+        ftp.server=
+        ftp.user=
+        ftp.password=
+        ftp.dir=        
+        -->
+
+	<!-- auto values but should be checked -->
+	<property name="cfg.comName" value="com_${cfg.name}" />
+	<property name="cfg.modName" value="mod_${cfg.name}" />
+	<property name="cfg.comDir" value="${basedir}/${cfg.comName}" />
+	<property name="cfg.modDir" value="${basedir}/${cfg.modName}" />
+	<property name="cfg.adminFilesDir" location="${cfg.comDir}/admin" />
+	<property name="cfg.siteFilesDir" location="${cfg.comDir}/site" />
+	<property name="cfg.languageFilesDir" location="${cfg.comDir}/language" />
+	<property name="cfg.mediaFilesDir" location="${cfg.comDir}/media" />
+
+	<target name="build" depends="init, build_component, build_module, clean, info" />
+
+	<target name="init" description="creates nessecary directory to build with">
+		<mkdir dir="${cfg.buildDir}" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="${cfg.localhostRoot}/administrator/components/${cfg.comName}" />
+		<delete dir="${cfg.localhostRoot}/administrator/modules/${cfg.modName}" />
+		<delete dir="${cfg.localhostRoot}/components/${cfg.comName}" />
+		<delete dir="${cfg.localhostRoot}/media/${cfg.comName}" />
+		<delete dir="${cfg.localhostRoot}/images/${cfg.name}" />
+		<delete>
+			<fileset dir="${cfg.localhostRoot}/administrator/language/en-GB">
+			    <include name="*${cfg.name}*.ini"/>
+			</fileset>
+		</delete>
+
+	</target>
+
+	<target name="build_component" description="packages the final component file">
+		<copy todir="${cfg.comDir}/admin/module" overwrite="true">
+			<fileset dir="${cfg.modDir}" />
+		</copy>
+		<zip destfile="${cfg.buildDir}/${cfg.comName}.zip" basedir="${cfg.comDir}" />
+	</target>
+
+	<target name="build_module" description="packages the final module file">
+		<zip destfile="${cfg.buildDir}/${cfg.modName}.zip" basedir="${cfg.modDir}" />
+	</target>
+
+	<target name="info" description="prints information">
+		<echo message="Project : ${cfg.name}" />
+		<tstamp>
+			<format property="buildtime" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+		</tstamp>
+		<echo message="Buildtime: ${buildtime}" />
+	</target>
+
+	<target name="update_localhost" depends="info" description="attemps to update files on localhost server with files from working directory">
+		<copy todir="${cfg.localhostRoot}/administrator/components/${cfg.comName}" overwrite="true">
+			<fileset dir="${cfg.adminFilesDir}" />
+		</copy>
+		<copy todir="${cfg.localhostRoot}/administrator/language" overwrite="true">
+			<fileset dir="${cfg.adminFilesDir}/language" />
+			<fileset dir="${cfg.modDir}/language" />
+		</copy>
+		<copy todir="${cfg.localhostRoot}/administrator/modules/${cfg.modName}" overwrite="true">
+			<fileset dir="${cfg.modDir}" />
+		</copy>
+		<copy todir="${cfg.localhostRoot}/media/${cfg.comName}" overwrite="true">
+			<fileset dir="${cfg.mediaFilesDir}" />
+		</copy>
+		<copy todir="${cfg.localhostRoot}/administrator/language/en-GB" overwrite="true">
+			 <fileset dir="${cfg.modDir}/language" /> 
+		</copy>
+	</target>
+
+</project>

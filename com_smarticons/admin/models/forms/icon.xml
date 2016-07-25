@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addrulepath="/administrator/components/com_smarticons/models/rules">
+	<fieldset name="details">
+		<field name="Name" type="text" label="COM_SMARTICONS_ICON_FIELD_NAME_LABEL" description="COM_SMARTICONS_ICON_FIELD_NAME_DESC" size="40" class="inputbox" required="true" default="" onchange="$('grid_text').innerHTML = $('list_text').innerHTML = this.value;" />
+		<field name="Title" type="text" label="COM_SMARTICONS_ICON_FIELD_TITLE_LABEL" description="COM_SMARTICONS_ICON_FIELD_TITLE_DESC" size="40" class="inputbox" default="" onchange="$('grid_url').title = $('list_url').title = this.value;" />
+		<field name="Text" type="text" label="COM_SMARTICONS_ICON_FIELD_ALTTEXT_LABEL" description="COM_SMARTICONS_ICON_FIELD_ALTTEXT_DESC" size="40" class="inputbox" default="" onchange="$('grid_image').alt = $('list_image').alt = this.value;" />
+		<field name="Display" type="list" label="COM_SMARTICONS_ICON_FIELD_DISPLAY" description="COM_SMARTICONS_ICON_FIELD_DISPLAY_DESC" class="inputbox" size="1" default="1" onchange="setDisplay(this.value);">
+			<option value="1">COM_SMARTICONS_ICON_FIELD_DISPLAY_IMAGETEXT</option>
+			<option value="4">COM_SMARTICONS_ICON_FIELD_DISPLAY_ICONTEXT</option>
+			<option value="2">COM_SMARTICONS_ICON_FIELD_DISPLAY_IMAGE</option>
+			<option value="5">COM_SMARTICONS_ICON_FIELD_DISPLAY_ICON</option>
+			<option value="3">COM_SMARTICONS_ICON_FIELD_DISPLAY_TEXT</option>
+		</field>
+		<field name="image" type="media" hide_none="1" class="inputbox" label="COM_SMARTICONS_ICON_FIELD_ICON_LABEL" size="40" description="COM_SMARTICONS_ICON_FIELD_ICON_DESC" onchange="changeImage(this.value)" />
+		<field name="icon" type="list" label="COM_SMARTICONS_ICON_FIELD_ICON_LABEL" default="!" description="COM_SMARTICONS_ICON_FIELD_ICON_DESC" onchange="$('grid_icon').innerHTML=$('list_icon').innerHTML=this.value" >
+			<option value="!">COM_SMARTICONS_ICON_HOME</option>
+			<option value="&#34;">COM_SMARTICONS_ICON_USER</option>
+			<option value="#">COM_SMARTICONS_ICON_LOCK</option>
+			<option value="$">COM_SMARTICONS_ICON_COMMENT</option>
+			<option value="%">COM_SMARTICONS_ICON_COMMENTS</option>
+			<option value="&amp;">COM_SMARTICONS_ICON_SHARE</option>
+			<option value="'">COM_SMARTICONS_ICON_REDO</option>
+			<option value="(">COM_SMARTICONS_ICON_UNDO</option>
+			<option value=")">COM_SMARTICONS_ICON_FILE_ADD</option>
+			<option value="*">COM_SMARTICONS_ICON_NEW</option>
+			<option value="+">COM_SMARTICONS_ICON_EDIT</option>
+			<option value=",">COM_SMARTICONS_ICON_PENCIL</option>
+			<option value="-">COM_SMARTICONS_ICON_FOLDER_OPEN</option>
+			<option value=".">COM_SMARTICONS_ICON_FOLDER_CLOSED</option>
+			<option value="/">COM_SMARTICONS_ICON_PICTURE</option>
+			<option value="0">COM_SMARTICONS_ICON_PICTURES</option>
+			<option value="1">COM_SMARTICONS_ICON_LIST</option>
+			<option value="2">COM_SMARTICONS_ICON_POWERCORD</option>
+			<option value="3">COM_SMARTICONS_ICON_CUBE</option>
+			<option value="4">COM_SMARTICONS_ICON_PUZZLE</option>
+			<option value="5">COM_SMARTICONS_ICON_FLAG</option>
+			<option value="6">COM_SMARTICONS_ICON_TOOLS</option>
+			<option value="7">COM_SMARTICONS_ICON_COGS</option>
+			<option value="8">COM_SMARTICONS_ICON_OPTIONS</option>
+			<option value="9">COM_SMARTICONS_ICON_EQUALIZER</option>
+			<option value=":">COM_SMARTICONS_ICON_WRENCH</option>
+			<option value=";">COM_SMARTICONS_ICON_BRUSH</option>
+			<option value="&lt;">COM_SMARTICONS_ICON_EYE_OPEN</option>
+			<option value="K">COM_SMARTICONS_ICON_EYE_CLOSED</option>
+			<option value="=">COM_SMARTICONS_ICON_CHECKBOX_UNCHECKED</option>
+			<option value="&gt;">COM_SMARTICONS_ICON_CHECKBOX</option>
+			<option value="?">COM_SMARTICONS_ICON_CHECKBOX_PARTIAL</option>
+			<option value="@">COM_SMARTICONS_ICON_STAR_EMPTY</option>
+			<option value="A">COM_SMARTICONS_ICON_STAR_PARTIAL</option>
+			<option value="B">COM_SMARTICONS_ICON_STAR</option>
+			<option value="C">COM_SMARTICONS_ICON_CALENDAR</option>
+			<option value="D">COM_SMARTICONS_ICON_CALENDARS</option>
+			<option value="E">COM_SMARTICONS_ICON_HELP</option>
+			<option value="F">COM_SMARTICONS_ICON_SUPPORT</option>
+			<option value="H">COM_SMARTICONS_ICON_WARNING</option>
+			<option value="G">COM_SMARTICONS_ICON_CHECKMARK</option>
+			<option value="J">COM_SMARTICONS_ICON_CANCEL</option>
+			<option value="L">COM_SMARTICONS_ICON_TRASH</option>
+			<option value="M">COM_SMARTICONS_ICON_ENVELOPE</option>
+			<option value="N">COM_SMARTICONS_ICON_ENVELOPE_OPEN</option>
+			<option value="O">COM_SMARTICONS_ICON_DRAWER</option>
+			<option value="P">COM_SMARTICONS_ICON_DRAWER_FULL</option>
+			<option value="Q">COM_SMARTICONS_ICON_BOX_ADD</option>
+			<option value="R">COM_SMARTICONS_ICON_BOX_REMOVE</option>
+			<option value="S">COM_SMARTICONS_ICON_SEARCH</option>
+			<option value="T">COM_SMARTICONS_ICON_FILTER</option>
+			<option value="U">COM_SMARTICONS_ICON_CAMERA</option>
+			<option value="V">COM_SMARTICONS_ICON_PLAY</option>
+			<option value="W">COM_SMARTICONS_ICON_MUSIC</option>
+			<option value="X">COM_SMARTICONS_ICON_GRID</option>
+			<option value="Y">COM_SMARTICONS_ICON_GRID_SMALL</option>
+			<option value="Z">COM_SMARTICONS_ICON_MENU</option>
+			<option value="[">COM_SMARTICONS_ICON_THUMBS_UP</option>
+			<option value="\">COM_SMARTICONS_ICON_THUMBS_DOWN</option>
+			<option value="I">COM_SMARTICONS_ICON_DELETE</option>
+			<option value="]">COM_SMARTICONS_ICON_PLUS</option>
+			<option value="^">COM_SMARTICONS_ICON_MINUS</option>
+			<option value="_">COM_SMARTICONS_ICON_KEY</option>
+			<option value="`">COM_SMARTICONS_ICON_QUOTE_OPEN</option>
+			<option value="a">COM_SMARTICONS_ICON_QUOTE_CLOSE</option>
+			<option value="b">COM_SMARTICONS_ICON_DATABASE</option>
+			<option value="c">COM_SMARTICONS_ICON_LOCATION</option>
+			<option value="d">COM_SMARTICONS_ICON_ZOOM_IN</option>
+			<option value="e">COM_SMARTICONS_ICON_ZOOM_OUT</option>
+			<option value="f">COM_SMARTICONS_ICON_ENLARGE</option>
+			<option value="h">COM_SMARTICONS_ICON_EXPAND</option>
+			<option value="g">COM_SMARTICONS_ICON_CONTRACT</option>
+			<option value="i">COM_SMARTICONS_ICON_SHRINK</option>
+			<option value="j">COM_SMARTICONS_ICON_HEALTH</option>
+			<option value="k">COM_SMARTICONS_ICON_WAND</option>
+			<option value="l">COM_SMARTICONS_ICON_REFRESH</option>
+			<option value="m">COM_SMARTICONS_ICON_VCARD</option>
+			<option value="n">COM_SMARTICONS_ICON_CLOCK</option>
+			<option value="o">COM_SMARTICONS_ICON_COMPASS</option>
+			<option value="p">COM_SMARTICONS_ICON_ADDRESS</option>
+			<option value="q">COM_SMARTICONS_ICON_FEED</option>
+			<option value="r">COM_SMARTICONS_ICON_ATTACHMENT</option>
+			<option value="s">COM_SMARTICONS_ICON_PIN</option>
+			<option value="t">COM_SMARTICONS_ICON_LAMP</option>
+			<option value="u">COM_SMARTICONS_ICON_CHART</option>
+			<option value="v">COM_SMARTICONS_ICON_BARS</option>
+			<option value="w">COM_SMARTICONS_ICON_PIE</option>
+			<option value="x">COM_SMARTICONS_ICON_DATABOARD</option>
+			<option value="y">COM_SMARTICONS_ICON_LIGHTNING</option>
+			<option value="z">COM_SMARTICONS_ICON_MOVE</option>
+			<option value="{">COM_SMARTICONS_ICON_NEXT</option>
+			<option value="|">COM_SMARTICONS_ICON_PREVIOUS</option>
+			<option value="}">COM_SMARTICONS_ICON_FIRST</option>
+			<option value="&#57344;">COM_SMARTICONS_ICON_LAST</option>
+			<option value="&#57345;">COM_SMARTICONS_ICON_LOOP</option>
+			<option value="&#57346;">COM_SMARTICONS_ICON_SHUFFLE</option>
+			<option value="&#57347;">COM_SMARTICONS_ICON_ARROW_FIRST</option>
+			<option value="&#57348;">COM_SMARTICONS_ICON_ARROW_LAST</option>
+			<option value="&#57349;">COM_SMARTICONS_ICON_ARROW_UP</option>
+			<option value="&#57351;">COM_SMARTICONS_ICON_ARROW_DOWN</option>
+			<option value="&#57352;">COM_SMARTICONS_ICON_ARROW_LEFT</option>
+			<option value="&#57350;">COM_SMARTICONS_ICON_ARROW_RIGHT</option>
+			<option value="&#57353;">COM_SMARTICONS_ICON_ARROW_UP_2</option>
+			<option value="&#57355;">COM_SMARTICONS_ICON_ARROW_DOWN_2</option>
+			<option value="&#57356;">COM_SMARTICONS_ICON_ARROW_LEFT_2</option>
+			<option value="&#57354;">COM_SMARTICONS_ICON_ARROW_RIGHT_2</option>
+			<option value="&#57359;">COM_SMARTICONS_ICON_ARROW_UP_3</option>
+			<option value="&#57361;">COM_SMARTICONS_ICON_ARROW_DOWN_3</option>
+			<option value="&#57362;">COM_SMARTICONS_ICON_ARROW_LEFT_3</option>
+			<option value="&#57360;">COM_SMARTICONS_ICON_ARROW_RIGHT_3</option>
+			<option value="&#57357;">COM_SMARTICONS_ICON_PLAY</option>
+			<option value="&#57358;">COM_SMARTICONS_ICON_MENU_2</option>
+			<option value="&#57363;">COM_SMARTICONS_ICON_PRINTER</option>
+			<option value="&#57364;">COM_SMARTICONS_ICON_COLOR_PALETTE</option>
+			<option value="&#57365;">COM_SMARTICONS_ICON_VIDEO_CAMERA</option>
+			<option value="&#57366;">COM_SMARTICONS_ICON_FILE</option>
+			<option value="&#57367;">COM_SMARTICONS_ICON_FILE_REMOVE</option>
+			<option value="&#57368;">COM_SMARTICONS_ICON_COPY</option>
+			<option value="&#57369;">COM_SMARTICONS_ICON_CART</option>
+			<option value="&#57370;">COM_SMARTICONS_ICON_BASKET</option>
+			<option value="&#57371;">COM_SMARTICONS_ICON_BROADCAST</option>
+			<option value="&#57372;">COM_SMARTICONS_ICON_SCREEN</option>
+			<option value="&#57373;">COM_SMARTICONS_ICON_TABLET</option>
+			<option value="&#57374;">COM_SMARTICONS_ICON_MOBILE</option>
+			<option value="&#57375;">COM_SMARTICONS_ICON_USERS</option>
+			<option value="&#57376;">COM_SMARTICONS_ICON_BRIEFCASE</option>
+			<option value="&#57377;">COM_SMARTICONS_ICON_DOWNLOAD</option>
+			<option value="&#57378;">COM_SMARTICONS_ICON_UPLOAD</option>
+			<option value="&#57379;">COM_SMARTICONS_ICON_BOOKMARK</option>
+			<option value="&#57380;">COM_SMARTICONS_ICON_OUT</option>
+
+		</field>
+		<field name="catid" type="category" extension="com_smarticons" label="JCATEGORY" description="COM_SMARTICONS_ICON_FIELD_CATEGORY_DESC" class="inputbox">
+			<option value="0">JOPTION_SELECT_CATEGORY</option>
+		</field>
+		<field name="state" type="list" label="COM_SMARTICONS_ICON_FIELD_STATE" description="COM_SMARTICONS_ICON_FIELD_STATE_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		<field name="Target" type="text" size="40" required="true" validate="target" label="COM_SMARTICONS_ICON_FIELD_TARGET" description="COM_SMARTICONS_ICON_FIELD_TARGET_DESC" class="inputbox validate-link" onchange="$('grid_url').href = $('list_url').href = this.value;" />
+		<field name="COM_SMARTICONS_ICON_FIELD_BLANK" type="AdminMenuItem" width="40" onchange="$('jform_Target').value = $('grid_url').href = $('list_url').href = this.value;">
+			<option value="">JOPTION_SELECT_MENU</option>
+			<option value="http://">COM_SMARTICONS_ICON_FIELDS_TARGET_EXTERNAL</option>
+		</field>
+	</fieldset>
+	<fieldset name="hidden">
+		<field name="idIcon" type="hidden" />
+		<field name="asset_id" type="hidden" />
+	</fieldset>
+	<fields name="params">
+		<fieldset name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+			<field name="bold" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_BOLD_LABEL" description="COM_SMARTICONS_ICON_FIELD_BOLD_DESC" value="1" onclick="$('grid_text').style.fontWeight = $('list_text').style.fontWeight = this.checked ? 'bold' : 'normal';" />
+			<field name="italic" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_ITALIC_LABEL" description="COM_SMARTICONS_ICON_FIELD_ITALIC_DESC" value="1" onclick="$('grid_text').style.fontStyle = $('list_text').style.fontStyle = this.checked ? 'italic' : 'normal';" />
+			<field name="underline" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_UNDERLINE_LABEL" description="COM_SMARTICONS_ICON_FIELD_UNDERLINE_DESC" value="1" onclick="$('grid_text').style.textDecoration = $('list_text').style.textDecoration = this.checked ? 'underline' : 'none';" />
+			<field name="newWindow" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_NEWWINDOW_LABEL" description="COM_SMARTICONS_ICON_FIELD_NEWWINDOW_DESC" value="1" />
+			<field name="width" type="text" label="COM_SMARTICONS_ICON_FIELD_ICON_WIDTH_LABEL" description="COM_SMARTICONS_ICON_FIELD_ICON_WIDTH_DESC" class="inputbox validate-numeric" onchange="$('grid_url').setStyle('width',this.value+'px');" />
+			<field name="height" type="text" label="COM_SMARTICONS_ICON_FIELD_ICON_HEIGHT_LABEL" description="COM_SMARTICONS_ICON_FIELD_ICON_HEIGHT_DESC" class="inputbox validate-numeric" onchange="$('grid_url').setStyle('height',this.value+'px');" />
+			<field name="modalWindow" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_MODALWINDOW_LABEL" description="COM_SMARTICONS_ICON_FIELD_MODALWINDOW_DESC" value="1" />
+			<field name="modalWidth" type="text" label="COM_SMARTICONS_ICON_FIELD_MODAL_WIDTH_LABEL" description="COM_SMARTICONS_ICON_FIELD_MODAL_WIDTH_DESC" class="inputbox validate-numeric" default="800" />
+			<field name="modalHeight" type="text" label="COM_SMARTICONS_ICON_FIELD_MODAL_HEIGHT_LABEL" description="COM_SMARTICONS_ICON_FIELD_MODAL_HEIGHT_DESC" class="inputbox validate-numeric" default="500" />
+		</fieldset>
+		<fieldset name="advanced">
+			<field name="accessCheck" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_NO_ACCESS_CHECK_LABEL" description="COM_SMARTICONS_ICON_FIELD_NO_ACCESS_CHECK_DESC" value="1" />
+			<field name="token" type="checkbox" label="COM_SMARTICONS_ICON_FIELD_TOKEN_LABEL" description="COM_SMARTICONS_ICON_FIELD_TOKEN_DESC" value="1" />
+			<field name="urlParams" type="text" label="COM_SMARTICONS_ICON_FIELD_URL_PARAMETERS_LABEL" description="COM_SMARTICONS_ICON_FIELD_URL_PARAMETERS_DESC" />
+		</fieldset>
+	</fields>
+	<fields>
+		<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+			<field id="rules" name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_smarticons" section="icon" />
+		</fieldset>
+	</fields>
+</form>

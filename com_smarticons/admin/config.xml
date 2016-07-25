@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset 
+		name="icons" 
+		label="COM_SMARTICONS_CONFIG_ICON_SETTINGS_LABEL"
+		description="COM_SMARTICONS_CONFIG_ICON_SETTINGS_DESC">
+		<field
+			name="accessCheck"
+			type="checkbox"
+			label="COM_SMARTICONS_ICON_FIELD_NO_ACCESS_CHECK_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_NO_ACCESS_CHECK_DESC"
+			value="1" />
+		<field
+			name="bold"
+			type="checkbox"
+			label="COM_SMARTICONS_ICON_FIELD_BOLD_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_BOLD_DESC"
+			value="1"/>
+		<field
+			name="italic"
+			type="checkbox"
+			label="COM_SMARTICONS_ICON_FIELD_ITALIC_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_ITALIC_DESC"
+			value="1"/>
+		<field
+			name="underline"
+			type="checkbox"
+			label="COM_SMARTICONS_ICON_FIELD_UNDERLINE_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_UNDERLINE_DESC"
+			value="1"/>
+		<field
+			name="NewWindow"
+			type="checkbox"
+			label="COM_SMARTICONS_ICON_FIELD_NEWWINDOW_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_NEWWINDOW_DESC"
+			value="1"/>
+		<field
+			name="width"
+			type="text"
+			label="COM_SMARTICONS_ICON_FIELD_ICON_WIDTH_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_ICON_WIDTH_DESC"
+			class="inputbox validate-numeric"/>
+		<field
+			name="height"
+			type="text"
+			label="COM_SMARTICONS_ICON_FIELD_ICON_HEIGHT_LABEL"
+			description="COM_SMARTICONS_ICON_FIELD_ICON_HEIGHT_DESC"
+			class="inputbox validate-numeric"/>
+		<field 
+			name="display_mode"
+			type="list"
+			label="COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_LABEL"
+			description="COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_DESC"
+			default="2"
+			class="inputbox">
+				<option value="1">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION1</option>
+				<option value="2">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION2</option>
+				<option value="3">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION3</option>
+				<option value="4">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION4</option>
+				<option value="5">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION5</option>
+			</field>
+	</fieldset>
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC">
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox"
+			validate="rules"
+			filter="rules"
+			component="com_smarticons"
+			section="component"/>
+	</fieldset>
+</config>

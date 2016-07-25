@@ -1,0 +1,52 @@
+@CHARSET "ISO-8859-1";
+#wrapper div.grid {
+	text-align: center;
+	margin-right: 15px;
+	float: left;
+	margin-bottom: 15px;
+	background-color: #fff;
+}
+
+#wrapper div.grid a {
+	display: block;
+	float: left;
+	border: 1px solid #eaeaea;
+	background: #FDFDFD;
+	height: 105px;
+	width: 108px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+#wrapper div.grid a:hover,
+#wrapper div.grid a:focus,
+#wrapper div.grid a:active {
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #fbfbfb;
+	color: #025A8D;
+}
+
+#wrapper img {
+	padding: 10px 0;
+	margin: 0 auto;
+}
+
+#wrapper span {
+	display: block;
+	text-align: center;
+}
+
+#wrapper i.big {
+	font-size:48px;
+	padding: 10px 0;
+	margin: 0 auto;
+	line-height:48px;
+}
+
+i {
+	font-family: 'IcoMoon';
+	font-style: normal;
+}
