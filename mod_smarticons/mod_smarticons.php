@@ -21,7 +21,7 @@ $groups				= SmartIconsHelper::getButtons();
 $componentConfig	= SmartIconsHelper::getComponentConfig()->toObject();
 $layout 			= $params->get('layout', '_:tree');
 $mainframe			= JFactory::getApplication();
-$instance			= $mainframe->getUserState('mod_smarticons_instances', 1);
+$instance			= $mainframe->getUserState('mod_smarticons_instances', 0);
 
 $mainframe->setUserState('mod_smarticons_instances', $instance+1);
 

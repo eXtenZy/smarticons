@@ -23,7 +23,7 @@ if ($tabNum > 1) :
 	foreach ($groups as $key => $group) :
 		$active = $group == $firstTab ? ' class="active"' : '';
 ?>	
-		<li <?php echo $active; ?>><a href="#<?php echo $group->alias . $group->id . $instance; ?>" data-toggle="tab"><?php echo $group->title; ?></a></li>
+		<li <?php echo $active; ?>><a href="#<?php echo $group->alias . $group->id . $instance; ?>" data-toggle="tab"><?php echo JText::_($group->title); ?></a></li>
 <?php 
 	endforeach;
 ?>
@@ -58,7 +58,7 @@ foreach ($groups as $group) :
 <?php 
 		endforeach;
 	else:?>
-	<div class='alert'>Empty group</div>
+	<div class='alert'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></div>
 <?php 
 	endif;
 ?>

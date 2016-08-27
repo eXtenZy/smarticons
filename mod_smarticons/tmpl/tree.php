@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php 
 foreach ($groups as $group) : 
 ?>
-	<h2 class="nav-header"><?php echo $group->title; ?></h2>
+	<h2 class="nav-header"><?php echo JText::_($group->title); ?></h2>
 	
 <?php
 	if (isset($group->icons) && !empty($group->icons)):?>
@@ -34,7 +34,7 @@ foreach ($groups as $group) :
 				echo JHtml::_('image',$button->Icon, isset($button->Text) ? $button->Text : '', array('id' => "list_image", 'width' => '14px', 'height' => '14px'));
 			endif;
 			if (($button->Display <= 4) && ($button->Display != 2)) :?>
-				<span class="j-links-link" style="<?php echo implode("; ", $button->style);?>"><?php echo $button->Name; ?></span>
+				<span class="j-links-link" style="<?php echo implode("; ", $button->style);?>"><?php echo JText::_($button->Name); ?></span>
 			<?php endif;?>
 			</a>
 		</li>
@@ -44,7 +44,7 @@ foreach ($groups as $group) :
 	</ul>
 <?php
 	else:?>
-	<span class='empty'>Empty group</span> 
+	<span class='empty'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></span> 
 <?php
 	endif; 
 endforeach;
