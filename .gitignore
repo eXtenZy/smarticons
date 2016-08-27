@@ -45,3 +45,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+com_smarticons/admin/module
+packages

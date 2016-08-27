@@ -16,7 +16,7 @@ JHtml::_('formbehavior.chosen', 'select');
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
-
+$canDo		= SmartIconsHelper::getActions($this->state->get('filter.category_id'));
 $sortFields = $this->getSortFields();
 
 ?>
@@ -88,6 +88,16 @@ $sortFields = $this->getSortFields();
 					?>
 				</tbody>
 			</table>
+			<?php //Load the batch processing form. ?>
+			<?php #if ($canDo->get('core.create') && $canDo->get('core.edit') && $canDo->get('core.edit.state')) : ?>
+				<?php echo JHtml::_('bootstrap.renderModal','collapseModal',
+							array(
+								'title' => JText::_('COM_SMARTICONS_BATCH_OPTIONS'),
+								'footer' => $this->loadTemplate('batch_footer')
+							),
+							$this->loadTemplate('batch_body')
+				); ?>
+			<?php #endif; ?>
 		</div>
 		<input type="hidden" name="task" value="" />
 		<input type="hidden" name="boxchecked" value="0" />

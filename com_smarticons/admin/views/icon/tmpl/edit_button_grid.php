@@ -18,21 +18,25 @@ if (isset($this->item->params['bold'])) {
 		$textStyle.= "font-weight:bold; ";
 	}
 }
+
 if (isset($this->item->params['italic'])) {
 	if ($this->item->params['italic']==1) {
 		$textStyle.= "font-style:italic; ";
 	}
 }
+
 if (isset($this->item->params['underline'])) {
 	if ($this->item->params['underline']==1) {
 		$textStyle.= "text-decoration:underline;";
 	}
 }
+
 if (isset($this->item->params['width'])) {
 	if (is_numeric($this->item->params['width'])) {
 		$linkStyle.= "width:".abs($this->item->params['width']).'px; ';
 	}
 }
+
 if (isset($this->item->params['height'])) {
 	if (is_numeric($this->item->params['height'])) {
 		$linkStyle.= "height:".abs($this->item->params['height']).'px; ';
@@ -42,10 +46,10 @@ if (isset($this->item->params['height'])) {
 ?>
 <div id="wrapper">
 	<div class="grid">
-		<a id="grid_url" style="<?php echo $linkStyle; ?>" target="_blank" href="<?php echo $this->item->Target; ?>" title="<?php echo isset($this->item->Title) ? JText::_($this->item->Title) : ''; ?>">
-			<i id="grid_icon" class="big" style="<?php echo $this->displayIconControl ? 'display:block' : 'display:none'; ?>"><?php echo $this->item->icon; ?></i>
+		<a id="grid_url" style="<?php echo $linkStyle; ?>" target="_blank" href="<?php echo $this->item->Target; ?>" title="<?php echo isset($this->item->Title) ? $this->item->Title : ''; ?>">
+			<span id="grid_icon" class="big <?php echo 'icon-' . $this->item->icon; ?>" style="<?php echo $this->displayIconControl ? 'display:block' : 'display:none'; ?>"></span>
 			<?php echo JHtml::_('image',$this->item->Icon, $this->item->Text, array('id' => "grid_image", 'style' => $this->displayImgControl ? 'display:block' : 'display:none')); ?>
-			<span id="grid_text" style="<?php echo $textStyle;?>"><?php echo JText::_($this->item->Name); ?></span>
+			<span id="grid_text" style="<?php echo $textStyle;?>"><?php echo $this->item->Name; ?></span>
 		</a>
 	</div>
 </div>

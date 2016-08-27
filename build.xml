@@ -3,7 +3,7 @@
 	<description>Ant Build File for Joomla</description>
 
 	<property name="cfg.name" value="smarticons" />
-	<property name="cfg.localhostRoot" value="../joomla35" />
+	<property name="cfg.localhostRoot" value="../joomla36" />
 	<property name="cfg.buildDir" value="packages" />
 	<property name="cfg.xmlfile" value="${cfg.buildDir}/files.txt" />
 

@@ -16,6 +16,10 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_smarticons'))
 
 require_once JPATH_COMPONENT . '/helpers/smarticons.php';
 
+// Set some global property
+$document = JFactory::getDocument ();
+$document->addStyleDeclaration ( '.menu-smarticons16x16 {background-image: url(../media/com_smarticons/images/SmartIcons16x16.png);}' );
+
 $controller = JControllerLegacy::getInstance('SmartIcons');
 $controller->execute(JFactory::getApplication()->input->get('task'));
 $controller->redirect();

@@ -60,7 +60,7 @@ class SmartIconsViewIcons extends JViewLegacy {
 		// Get the toolbar object instance
 		$bar = JToolBar::getInstance('toolbar');
 
-		JToolbarHelper::title(JText::_('COM_SMARTICONS_MANAGER_ICONS'), 'SmartIcons48x48.png');
+		JToolbarHelper::title(JText::_('COM_SMARTICONS_MANAGER_ICONS'), 'smarticons48x48');
 		
 		if (count($user->getAuthorisedCategories('com_smarticons', 'core.create')) > 0) {
 			JToolbarHelper::addNew('icon.add');
@@ -83,6 +83,18 @@ class SmartIconsViewIcons extends JViewLegacy {
 
 		if ($canDo->get('core.delete')) {
 			JToolbarHelper::deleteList('', 'icons.delete', 'JTOOLBAR_DELETE');
+		}
+		
+		// Add a batch button
+		if ($canDo->get('core.create') && $canDo->get('core.edit') && $canDo->get('core.edit.state')) {
+		
+			$title = JText::_('JTOOLBAR_BATCH');
+		
+			// Instantiate a new JLayoutFile instance and render the batch button
+			$layout = new JLayoutFile('joomla.toolbar.batch');
+		
+			$dhtml = $layout->render(array('title' => $title));
+			$bar->appendButton('Custom', $dhtml, 'batch');
 		}
 
 		if ($canDo->get('core.create')) {

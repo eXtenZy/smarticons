@@ -10,185 +10,244 @@
 defined('_JEXEC') or die;
 
 class com_SmartIconsInstallerScript {
+	
+	public $categories = array (
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_CONTENT',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array (
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_ADD_NEW_ARTICLE',
+									'Target'	=> 'index.php?option=com_content&task=article.add',
+									'Icon'		=> 'pencil-2',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 1
+							),
+							array(
+									'idIcon' 	=> 0,
+									'catid' 	=> 0,
+									'Name' 		=> 'MOD_QUICKICON_ARTICLE_MANAGER',
+									'Target' 	=> 'index.php?option=com_content',
+									'Icon' 		=> 'stack',
+									'Display' 	=> 4,
+									'state' 	=> 1,
+									'ordering' 	=> 2
+							),
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_CATEGORY_MANAGER',
+									'Target'	=> 'index.php?option=com_categories&extension=com_content',
+									'Icon'		=> 'folder',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 3
+							),
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_MEDIA_MANAGER',
+									'Target'	=> 'index.php?option=com_media',
+									'Icon'		=> 'pictures',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 4
+							)
+					)
+			),
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_STRUCTURE',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array (
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_MENU_MANAGER',
+									'Target'	=> 'index.php?option=com_menus',
+									'Icon'		=> 'list-view',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 5
+							),
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_MODULE_MANAGER',
+									'Target'	=> 'index.php?option=com_modules',
+									'Icon'		=> 'cube',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 6
+							)
+					)
+			),
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_USERS',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array (
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_USER_MANAGER',
+									'Target'	=> 'index.php?option=com_users',
+									'Icon'		=> 'users',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 7
+							)
+					)
+			),
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_CONFIGURATION',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array (
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_LANGUAGE_MANAGER',
+									'Target'	=> 'index.php?option=com_languages',
+									'Icon'		=> 'comments-2',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 8
+							),
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_GLOBAL_CONFIGURATION',
+									'Target'	=> 'index.php?option=com_config',
+									'Icon'		=> 'cog',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 9
+							),
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_TEMPLATE_MANAGER',
+									'Target'	=> 'index.php?option=com_templates',
+									'Icon'		=> 'eye',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 10
+							)
+					)
+			),
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_EXTENSIONS',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array (
+							array(
+									'idIcon'	=> 0,
+									'catid'		=> 0,
+									'Name'		=> 'MOD_QUICKICON_INSTALL_EXTENSIONS',
+									'Target'	=> 'iindex.php?option=com_installer',
+									'Icon'		=> 'download',
+									'Display'	=> 4,
+									'state'		=> 1,
+									'ordering'	=> 11
+							)
+					)
+			),
+			array(
+					'parent_id' 		=> 1,
+					'extension' 		=> 'com_smarticons',
+					'title'				=> 'MOD_QUICKICON_MAINTENANCE',
+					'published'			=> 1,
+					'access'			=> 1,
+					'level'				=> 1,
+					'language'			=> '*',
+					'created_user_id'	=> 0,
+					'icons'				=> array ()
+			)
+	);
+	
 	/**
 	 * method to install the component
 	 *
 	 * @return void
 	 */
 	function install($parent) {
-		$user			= JFactory::getUser();
-		$db				= JFactory::getDbo();
-		$categoryTable	= JTable::getInstance('Category');
-
-		//Create the standard category for the default shortcuts
-		$category = array();
-		$category['parent_id']			= '1';
-		$category['extension']			= 'com_smarticons';
-		$category['title']				= 'Standard';
-		$category['published']			= '1';
-		$category['access']				= '1';
-		$category['level']				= '1';
-		$category['language']			= '*';
-		$category['created_user_id']	= $user->id;
-
-		$categoryTable->setLocation($category['parent_id'], 'last-child');
-		$categoryTable->setRules('{"core.view":{"1":1},"core.delete":[],"core.edit":[],"core.edit.state":[]}');
-
-		if ($categoryTable->save($category)) {
-			//Get the id of the newly created category
-			$query = $db->getQuery(true);
-			$query->select('id');
-			$query->from('#__categories');
-			$query->where('extension = \'com_smarticons\'');
-			$query->where('title = \'Standard\'');
-
-			$db->setQuery($query);
-			if ($id = (int)$db->loadResult()) {
-				echo '<p>'. JText::_('COM_SMARTICONS_INSTALLER_CATEGORY_ADDSUCCESS') .'</p>';
-			} else {
-				echo "<p style=\"color:red\">".JText::_('COM_SMARTICONS_INSTALLER_CATEGORY_ADDFAIL').'</p>';
-			}
-		} else {
-			echo "<p style=\"color:red\">".JText::_('COM_SMARTICONS_INSTALLER_CATEGORY_ADDFAIL').'</p>';
-		}
-
-
-		//Create the shortcuts
-		$icons = array();
-
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_ADD_NEW_ARTICLE',
-				'Title' => 'MOD_QUICKICON_ADD_NEW_ARTICLE',
-				'Target' => 'index.php?option=com_content&task=article.add',
-				'Icon' => ')',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 1);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_ARTICLE_MANAGER',
-				'Title' => 'MOD_QUICKICON_ARTICLE_MANAGER',
-				'Target' => 'index.php?option=com_content',
-				'Icon' => ',',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 2);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_CATEGORY_MANAGER',
-				'Title' => 'MOD_QUICKICON_CATEGORY_MANAGER',
-				'Target' => 'index.php?option=com_categories&extension=com_content',
-				'Icon' => '-',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 3);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_MEDIA_MANAGER',
-				'Title' => 'MOD_QUICKICON_MEDIA_MANAGER',
-				'Target' => 'index.php?option=com_media',
-				'Icon' => '0',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 4);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_MENU_MANAGER',
-				'Title' => 'MOD_QUICKICON_MENU_MANAGER',
-				'Target' => 'index.php?option=com_menus',
-				'Icon' => '1',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 5);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_USER_MANAGER',
-				'Title' => 'MOD_QUICKICON_USER_MANAGER',
-				'Target' => 'index.php?option=com_users',
-				'Icon' => 'p',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 6);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_MODULE_MANAGER',
-				'Title' => 'MOD_QUICKICON_MODULE_MANAGER',
-				'Target' => 'index.php?option=com_modules',
-				'Icon' => '3',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 7);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_EXTENSION_MANAGER',
-				'Title' => 'MOD_QUICKICON_EXTENSION_MANAGER',
-				'Target' => 'index.php?option=com_installer',
-				'Icon' => '4',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 8);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_LANGUAGE_MANAGER',
-				'Title' => 'MOD_QUICKICON_LANGUAGE_MANAGER',
-				'Target' => 'index.php?option=com_languages',
-				'Icon' => '%',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 9);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_GLOBAL_CONFIGURATION',
-				'Title' => 'MOD_QUICKICON_GLOBAL_CONFIGURATION',
-				'Target' => 'index.php?option=com_config',
-				'Icon' => '8',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 10);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_TEMPLATE_MANAGER',
-				'Title' => 'MOD_QUICKICON_TEMPLATE_MANAGER',
-				'Target' => 'index.php?option=com_templates',
-				'Icon' => '<',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 11);
-		$icons[] = array(
-				'idIcon' => 0,
-				'catid' => $id,
-				'Name' => 'MOD_QUICKICON_PROFILE',
-				'Title' => 'MOD_QUICKICON_PROFILE',
-				'Target' => 'index.php?option=com_admin&task=profile.edit',
-				'Icon' => 'm',
-				'Display' => 4,
-				'state' => 1,
-				'ordering' => 12,
-				'params' => '{"accessCheck":"1","urlParams":"id=%user%"}');
-
+		
 		include_once JPATH_ADMINISTRATOR.'/components/com_smarticons/tables/icon.php';
-		$iconsTable = new SmartIconsTableIcon($db);
+		
+		//Set language file from mod_quickicons
+		JFactory::getLanguage()->load('mod_quickicon');
+		
+		$user				= JFactory::getUser();
+		$db					= JFactory::getDbo();
+		$categoriesSaved	= 0;
+		$iconsSaved			= 0;
 
-		$iconsSaved = 0;
+		//Create the categories for each group of icons
+		foreach ($this->categories as $category) {
+			$categoryTable	= JTable::getInstance('Category');
+			
+			$categoryTable->setLocation($category['parent_id'], 'last-child');
+			$categoryTable->setRules('{"core.view":{"1":1},"core.delete":[],"core.edit":[],"core.edit.state":[]}');
+			
+			$category['title']				= JText::_($category['title']);
+			$category['created_user_id']	= $user->id;
 
-		//Save the default shortcuts in the database
-		foreach ($icons as $icon) {
-			$iconsTable->reset();
-			$iconsTable->setRules('{"core.view":{"1":1},"core.delete":[],"core.edit":[],"core.edit.state":[]}');
-			if ($iconsTable->save($icon)) {
-				$iconsSaved++;
+			if ($categoryTable->save($category)) {
+				
+				$query = $db->getQuery(true);
+				
+				$query->select('id')
+				      ->from('#__categories')
+				      ->where('title =' . $db->quote($category['title']));
+				
+				$db->setQuery($query);
+				
+				$categoryId = $db->loadResult();
+				
+				foreach ($category['icons'] as $icon) {
+					$iconsTable = new SmartIconsTableIcon($db);
+					
+					$iconsTable->setRules('{"core.view":{"1":1},"core.delete":[],"core.edit":[],"core.edit.state":[]}');
+					
+					$icon['catid']	= $categoryId;
+					$icon['Name']	= JText::_($icon['Name']);
+
+					if ($iconsTable->save($icon)) {
+						$iconsSaved++;
+					}
+				}
+			} else {
+				$error = $categoryTable->getErrors();
 			}
 		}
 
@@ -225,27 +284,34 @@ class com_SmartIconsInstallerScript {
 
 		//Enable mod_smarticons module
 		$query = $db->getQuery(true);
-		$query->select('id');
-		$query->from('#__modules');
-		$query->where('module = '.$db->quote('mod_smarticons'));
+		
+		$query->select('id')
+		      ->from('#__modules')
+		      ->where('module = '.$db->quote('mod_smarticons'));
 
 		$db->setQuery($query);
 
 		if ($id = $db->loadResult()) {
 			$query = $db->getQuery(true);
-			$query->update('#__modules');
-			$query->set('published = 1');
-			$query->set('position = \'icon\'');
-			$query->set('ordering = 1');
-			$query->set('access = 3');
-			$query->where('id = '. $db->quote($id));
+			
+			$query->update('#__modules')
+			      ->set('published = 1')
+			      ->set('position = \'icon\'')
+			      ->set('ordering = 1')
+			      ->set('access = 3')
+			      ->where('id = '. $db->quote($id));
+			
 			$db->setQuery($query);
+			
 			if ($db->query()) {
 				$query = $db->getQuery(true);
-				$query->insert('#__modules_menu');
-				$query->set('moduleid = '. $db->quote($id));
-				$query->set('menuid = 0');
+				
+				$query->insert('#__modules_menu')
+				      ->set('moduleid = '. $db->quote($id))
+				      ->set('menuid = 0');
+				      
 				$db->setQuery($query);
+				
 				if ($db->query()) {
 					echo '<p>'. JText::_('COM_SMARTICONS_INSTALLER_MODULE_ENABLE_SUCCESS') .'</p>';
 				} else {
@@ -262,18 +328,21 @@ class com_SmartIconsInstallerScript {
 		//Disable mod_quickicons module
 		$query = $db->getQuery(true);
 
-		$query->select('id');
-		$query->from('#__modules');
-		$query->where('module = '. $db->quote('mod_quickicon'));
+		$query->select('id')
+		      ->from('#__modules')
+		      ->where('module = '. $db->quote('mod_quickicon'));
 
 		$db->setQuery($query);
 
 		if ($id = $db->loadResult()) {
 			$query = $db->getQuery(true);
-			$query->update('#__modules');
-			$query->set('published = 0');
-			$query->where('id = '. $db->quote($id));
+			
+			$query->update('#__modules')
+			      ->set('published = 0')
+			      ->where('id = '. $db->quote($id));
+			
 			$db->setQuery($query);
+			
 			if ($db->query()) {
 				echo '<p>'. JText::_('COM_SMARTICONS_INSTALLER_QUICKICON_DISABLE_SUCCESS') .'</p>';
 			} else {
@@ -296,9 +365,9 @@ class com_SmartIconsInstallerScript {
 
 			//Uninstall mod_smarticons
 			$query = $db->getQuery(true);
-			$query->select('extension_id');
-			$query->from('#__extensions');
-			$query->where('element = '. $db->quote('mod_smarticons'));
+			$query->select('extension_id')
+			      ->from('#__extensions')
+			      ->where('element = '. $db->quote('mod_smarticons'));
 
 			$db->setQuery($query);
 			if ($id = $db->loadResult()) {
@@ -314,17 +383,21 @@ class com_SmartIconsInstallerScript {
 			//Enable mod_quickicons
 			$query = $db->getQuery(true);
 
-			$query->select('id');
-			$query->from('#__modules');
-			$query->where('module = '. $db->quote('mod_quickicon'));
+			$query->select('id')
+			      ->from('#__modules')
+			      ->where('module = '. $db->quote('mod_quickicon'));
 
 			$db->setQuery($query);
 			if ($id = $db->loadResult()) {
+				
 				$query = $db->getQuery(true);
-				$query->update('#__modules');
-				$query->set('published = 1');
-				$query->where('id = '. $db->quote($id));
+				
+				$query->update('#__modules')
+				      ->set('published = 1')
+				      ->where('id = '. $db->quote($id));
+				      
 				$db->setQuery($query);
+				
 				if ($db->query()) {
 					echo '<p>'. JText::_('COM_SMARTICONS_INSTALLER_QUICKICON_ENABLE_SUCCESS') .'</p>';
 				} else {
@@ -336,16 +409,20 @@ class com_SmartIconsInstallerScript {
 
 			//Delete assets
 			$query = $db->getQuery(true);
-			$query->delete('#__assets');
-			$query->where('name LIKE \'%com_smarticons%\'');
+			
+			$query->delete('#__assets')
+			      ->where('name LIKE \'%com_smarticons%\'');
 
 			$db->setQuery($query);
+			
 			$db->query();
 
 			//Delete categories
 			$query = $db->getQuery(true);
-			$query->delete('#__categories');
-			$query->where('extension = '. $db->quote('com_smarticons'));
+			
+			$query->delete('#__categories')
+			      ->where('extension = '. $db->quote('com_smarticons'));
+			      
 			$db->setQuery($query);
 
 			if ($db->query()) {

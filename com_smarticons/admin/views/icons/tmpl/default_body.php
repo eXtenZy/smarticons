@@ -88,10 +88,10 @@ foreach($this->icons as $i => $icon):
 			endif;
 			if ($canEdit) :?>
 			<a href="<?php echo JRoute::_('index.php?option=com_smarticons&task=icon.edit&idIcon='. (int)$icon->idIcon); ?>">
-				<?php echo $this->escape(JText::_($icon->Name)); ?>
+				<?php echo $this->escape($icon->Name); ?>
 			</a>
 			<?php else: 
-				echo $this->escape(JText::_($icon->Name));
+				echo $this->escape($icon->Name);
 			endif;?>
 			<div class="small">
 				<?php echo $this->escape($category)?>
@@ -119,7 +119,7 @@ foreach($this->icons as $i => $icon):
 		</div>
 	</td>
 	<td class="hidden-phone">
-		<?php echo JText::_($icon->Title); ?>
+		<?php echo $icon->Title; ?>
 	</td>
 	<td class="hidden-phone">
 		<?php echo $display; ?>

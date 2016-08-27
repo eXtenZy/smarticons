@@ -4,7 +4,7 @@ div.wrapper {
 	overflow: hidden;
 }
 
-div.wrapper div.grid {
+div.wrapper .grid {
     text-align: center;
     margin-right: 15px;
     float: left;
@@ -12,7 +12,7 @@ div.wrapper div.grid {
     background-color: #fff;
 }
 
-div.wrapper div.grid a {
+div.wrapper .grid a {
     display: block;
     float: left;
     border: 1px solid #eaeaea;
@@ -23,9 +23,9 @@ div.wrapper div.grid a {
     text-decoration: none;
 }
 
-div.wrapper div.grid a:hover,
-div.wrapper div.grid a:focus,
-div.wrapper div.grid a:active {
+div.wrapper .grid a:hover,
+div.wrapper .grid a:focus,
+div.wrapper .grid a:active {
     border-left: 1px solid #eee;
     border-top: 1px solid #eee;
     border-right: 1px solid #ccc;
@@ -44,15 +44,30 @@ div.wrapper span {
     text-align: center;
 }
 
-div.wrapper i.big {
+div.wrapper span.big {
     font-size:48px;
+    width:48px;
+    height:48px;
     padding: 10px 0;
     margin: 0 auto;
     line-height:48px;
     display: block;
 }
 
-div.wrapper i, div.list i {
-    font-family: 'IcoMoon';
-    font-style: normal;
+div.wrapper span.empty {
+	color: #555;
+	font-size: 14px;
+	text-aligb: center;
+}
+
+div.wrapper span.empty-grid {
+	color: #555;
+	font-size: 14px;
+	text-aligb: center;
+	border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fbfbfb;
+    padding: 10px 0;
 }

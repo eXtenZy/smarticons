@@ -92,6 +92,10 @@ class SmartIconsTableIcon extends JTable {
 			unset($this->image);
 			unset($this->icon);
 		}
+		
+		if (!isset($array['title'])) {
+			$array['Title'] = $array['Name'];
+		}
 
 		//Bind the rules.
 		if (isset($array['rules']) && is_array($array['rules'])) {
@@ -187,7 +191,7 @@ class SmartIconsTableIcon extends JTable {
 	 *
 	 * @return      int
 	 */
-	protected function _getAssetParentId($table = null, $id = null) {
+	protected function _getAssetParentId(JTable $table = null, $id = null) {
 		// We will retrieve the parent-asset from the Asset-table
 		$assetParent = self::getInstance('Asset', 'JTable', array('dbo' => $this->getDbo()));
 		// Default: if no asset-parent can be found we take the global asset

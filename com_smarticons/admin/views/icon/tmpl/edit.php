@@ -33,6 +33,10 @@ switch ($this->item->Display) {
 		$this->displayImgControl = false;
 		$this->displayIconControl = true;
 		break;
+	default:
+		$this->displayImgControl = true;
+		$this->displayIconControl = false;
+		break;
 }
 
 ?>

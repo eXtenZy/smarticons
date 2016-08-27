@@ -2,12 +2,12 @@
 <extension type="component" version="3.0" method="upgrade">
 	<name>COM_SMARTICONS</name>
 	<author>Bogdan-Ioan SUTA</author>
-	<creationDate>Nov 2012</creationDate>
+	<creationDate>Nov 2015</creationDate>
 	<copyright>(C) 2011 SUTA Bogdan-Ioan</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>bogdan.suta@naicum.ro</authorEmail>
 	<authorUrl>http://extensions.naicum.ro</authorUrl>
-	<version>2.0.0</version>
+	<version>2.1.0</version>
 	<description>COM_SMARTICONS_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
 	<install> <!-- Runs on install -->
@@ -59,7 +59,7 @@
 
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" priority="1" name="SmartIcons Update Site">http://extensions.naicum.ro/update/smarticons-2-update.xml
+		<server type="extension" priority="1" name="SmartIcons Update Site">http://extensions.naicum.ro/update/smarticons-update.xml
 		</server>
 	</updateservers>
 </extension>

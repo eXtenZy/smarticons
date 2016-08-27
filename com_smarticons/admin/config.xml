@@ -47,18 +47,12 @@
 			description="COM_SMARTICONS_ICON_FIELD_ICON_HEIGHT_DESC"
 			class="inputbox validate-numeric"/>
 		<field 
-			name="display_mode"
-			type="list"
+			name="pluginCategory"
+			type="category"
+			extension="com_smarticons"
 			label="COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_LABEL"
 			description="COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_DESC"
-			default="2"
-			class="inputbox">
-				<option value="1">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION1</option>
-				<option value="2">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION2</option>
-				<option value="3">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION3</option>
-				<option value="4">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION4</option>
-				<option value="5">COM_SMARTICONS_CONFIG_PLUGINS_DISPLAY_MODE_OPTION5</option>
-			</field>
+			class="inputbox" />
 	</fieldset>
 	<fieldset
 		name="permissions"

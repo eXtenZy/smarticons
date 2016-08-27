@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" version="3.0" client="administrator" method="upgrade">
-    <name>Smart Icons</name>
+    <name>MOD_SMARTICONS</name>
     <author>Bogdan-Ioan SUTA</author>
-    <creationDate>Jan 2013</creationDate>
+    <creationDate>Nov 2015</creationDate>
     <copyright>(C) 2011 SUTA Bogdan-Ioan</copyright>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
     <authorEmail>bogdan.suta@naicum.ro</authorEmail>
     <authorUrl>http://extensions.naicum.ro</authorUrl>
-    <version>2.0.0</version>
-    <description>Module for showing custom quick icons from the SmartIcons component</description>
+    <version>2.1.0</version>
+    <description>MOD_SMARTICONS_DESCRIPTION</description>
     <files>
         <filename module="mod_smarticons">mod_smarticons.php</filename>
         <filename>helper.php</filename>
@@ -25,6 +25,15 @@
         <fields name="params">
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="showtabs" type="radio"
+					class="btn-group btn-group-yesno"
+					label="MOD_SMARTICONS_ICON_FIELD_TABS"
+					description="MOD_SMARTICONS_ICON_FIELD_TABS_DESC"
+					default="1"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
             </fieldset>
         </fields>
     </config>    

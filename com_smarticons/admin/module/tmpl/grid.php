@@ -8,67 +8,67 @@
  **/
 
 // No direct access
-defined('_JEXEC') or die;
+defined('_JEXEC') or die; 
 
-$textStyle	= "";
-$linkStyle	= "";
-$class		= "";
-
-if (isset($button->params->bold)) {
-	if ($button->params->bold == 1) {
-		$textStyle.= "font-weight:bold; ";
-	}
-}
-if (isset($button->params->italic)) {
-	if ($button->params->italic == 1) {
-		$textStyle.= "font-style:italic; ";
-	}
-}
-if (isset($button->params->underline)) {
-	if ($button->params->underline == 1) {
-		$textStyle.= "text-decoration:underline;";
-	}
-}
-if (isset($button->params->width)) {
-	if (is_numeric($button->params->width)) {
-		$linkStyle.= "width:".abs($button->params->width).'px; ';
-	}
-}
-if (isset($button->params->height)) {
-	if (is_numeric($button->params->height)) {
-		$linkStyle.= "height:".abs($button->params->height).'px; ';
-	}
-}
-if (isset($button->params->newWindow)) {
-	if ($button->params->newWindow==1) {
-		$target = ' target="_blank"';
-	}
-}
-if (isset($button->params->modalWindow)) {
-	if ($button->params->modalWindow==1) {
-
-		// Load the modal behavior script.
-		JHtml::_('behavior.modal');
-
-		$class = ' class="modal" rel="{handler: \'iframe\', size: {x: '. $button->params->modalWidth. ', y: '. $button->params->modalHeight.'}}"';
-	}
-}
+$tabNum = count($groups);
+$firstTab = reset($groups); 
 
 ?>
-<div class="grid" <?php echo isset($button->id) ? "id=\"$button->id\"" : ''; ?>>
-	<a href="<?php echo $button->Target; ?>" 
-		<?php echo empty($linkStyle) ? '' : " style=\"$linkStyle\"";
-			echo isset($button->Title) ? " title=\"".JText::_($button->Title)."\"" : '';
-			echo isset($target) ? $target : '';
-			echo isset($class) ? $class : ''; ?>>
-	<?php if (($button->Display > 3) && ($button->Display <= 5)):?>
-		<i class="big"><?php echo $button->Icon; ?></i>
-	<?php endif; ?>
-	<?php if (($button->Display <= 2)):
-		echo JHtml::_('image',$button->Icon, isset($button->Text) ? JText::_($button->Text) : ''); 
+<div class="wrapper">
+<?php 
+if ($tabNum > 1) : 
+?>
+	<ul class="nav nav-tabs">
+<?php 
+	foreach ($groups as $key => $group) :
+		$active = $group == $firstTab ? ' class="active"' : '';
+?>	
+		<li <?php echo $active; ?>><a href="#<?php echo $group->alias . $group->id . $instance; ?>" data-toggle="tab"><?php echo $group->title; ?></a></li>
+<?php 
+	endforeach;
+?>
+	</ul>
+	<div class="tab-content" style="clear:both">
+<?php 
+
+endif;
+
+foreach ($groups as $group) :
+	$active = $group == $firstTab ? ' active' : '';
+?>
+		<div class="tab-pane<?php echo $active; ?>" id="<?php echo $group->alias . $group->id . $instance; ?>">
+<?php
+	if (isset($group->icons) && !empty($group->icons)):
+		foreach ($group->icons as $icon) :
+			$button = SmartIconsHelper::button($icon, $layout);
+?>
+			<div class="grid" id="<?php echo $button->id; ?>">
+				<a href="<?php echo $button->link; ?>" <?php echo implode(' ', $button->options); echo !empty($button->linkStyle) ? 'style="'. implode('; ', $button->linkStyle) .'"' : "" ; ?>>
+				<?php if (($button->Display > 3) && ($button->Display <= 5)):?>
+					<span class="big <?php echo implode(' ', $button->classes); ?>" ></span>
+				<?php endif; ?>
+				<?php if (($button->Display <= 2)):
+					echo JHtml::_('image',$button->Icon, isset($button->Text) ? $button->Text : ''); 
+				endif;
+				if (($button->Display <= 4) && ($button->Display != 2)) :?>
+					<span class="j-links-link" style="<?php echo implode("; ", $button->style);?>"><?php echo $button->Name; ?></span>
+				<?php endif;?>
+				</a>
+			</div>
+<?php 
+		endforeach;
+	else:?>
+	<span class='empty-grid'>Empty group</span>
+<?php 
 	endif;
-	if (($button->Display <= 4) && ($button->Display != 2)) :?>
-		<span style="<?php echo $textStyle;?>"><?php echo JText::_($button->Name); ?></span>
-	<?php endif;?>
-	</a>
+?>
+		</div>
+<?php 
+endforeach;
+if ($tabNum > 1) :
+?>
+	</div>
+<?php 
+endif;
+?>
 </div>

@@ -92,76 +92,9 @@ class SmartIconsViewIcon extends JViewLegacy {
 		$script[] = "	$('list_image').src = '" . JURI::root() . "' + imgSrc;";
 		$script[] = "}";
 		
-		$script[] = "function setDisplay(mode) {";
-		$script[] = "	Grid_text = $('grid_text');";
-		$script[] = "	List_text = $('list_text');";
-		$script[] = "	Grid_image = $('grid_image');";
-		$script[] = "	List_image = $('list_image');";
-		$script[] = "	Grid_icon = $('grid_icon');";
-		$script[] = "	List_icon = $('list_icon');";
-		$script[] = "	Icon_image_select = $('image_select');";
-		$script[] = "	Icon_icon_select = $('icon_select');";
-		$script[] = "	mode = parseInt(mode);";
-		$script[] = "	switch(mode) {";
-		$script[] = "		case 1:";
-		$script[] = "			Grid_text.style.display = 'block';";
-		$script[] = "			List_text.style.display = 'inline';";
-		$script[] = "			Grid_image.style.display = 'block';";
-		$script[] = "			List_image.style.display = 'inline';";
-		$script[] = "			Icon_image_select.style.display = 'block';";
-		$script[] = "			Grid_icon.style.display = 'none';";
-		$script[] = "			List_icon.style.display = 'none';";
-		$script[] = "			Icon_icon_select.style.display = 'none';";
-		$script[] = "			break;";
-		$script[] = "		case 2:";
-		$script[] = "			Grid_text.style.display = 'none';";
-		$script[] = "			List_text.style.display = 'none';";
-		$script[] = "			Grid_image.style.display = 'block';";
-		$script[] = "			List_image.style.display = 'inline';";
-		$script[] = "			Icon_image_select.style.display = 'block';";
-		$script[] = "			Grid_icon.style.display = 'none';";
-		$script[] = "			List_icon.style.display = 'none';";
-		$script[] = "			Icon_icon_select.style.display = 'none';";
-		$script[] = "			break;";
-		$script[] = "		case 3:";
-		$script[] = "			Grid_text.style.display = 'block';";
-		$script[] = "			List_text.style.display = 'inline';";
-		$script[] = "			Grid_image.style.display = 'none';";
-		$script[] = "			List_image.style.display = 'none';";
-		$script[] = "			Icon_image_select.style.display = 'none';";
-		$script[] = "			Grid_icon.style.display = 'none';";
-		$script[] = "			List_icon.style.display = 'none';";
-		$script[] = "			Icon_icon_select.style.display = 'none';";
-		$script[] = "			break;";
-		$script[] = "		case 4:";
-		$script[] = "			Grid_text.style.display = 'block';";
-		$script[] = "			List_text.style.display = 'inline';";
-		$script[] = "			Grid_image.style.display = 'none';";
-		$script[] = "			List_image.style.display = 'none';";
-		$script[] = "			Icon_image_select.style.display = 'none';";
-		$script[] = "			Grid_icon.style.display = 'block';";
-		$script[] = "			List_icon.style.display = 'inline';";
-		$script[] = "			Icon_icon_select.style.display = 'block';";
-		$script[] = "			break;";
-		$script[] = "		case 5:";
-		$script[] = "			Grid_text.style.display = 'none';";
-		$script[] = "			List_text.style.display = 'none';";
-		$script[] = "			Grid_image.style.display = 'none';";
-		$script[] = "			List_image.style.display = 'none';";
-		$script[] = "			Icon_image_select.style.display = 'none';";
-		$script[] = "			Grid_icon.style.display = 'block';";
-		$script[] = "			List_icon.style.display = 'inline';";
-		$script[] = "			Icon_icon_select.style.display = 'block';";
-		$script[] = "			break;";
-		$script[] = "		default:";
-		$script[] = "			break;";
-		$script[] = "	}";
-		$script[] = "}";
-		
-		
-		
 		$document = JFactory::getDocument();
 		$document->addScriptDeclaration(implode("\n", $script));
 		$document->addStyleSheet('../media/com_smarticons/css/icon.css');
+		$document->addScript ( JURI::root () . "/administrator/components/com_smarticons/views/icon/tmpl/icon.js" );
 	}
 }
