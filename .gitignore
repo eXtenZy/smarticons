@@ -47,3 +47,4 @@ fabric.properties
 
 com_smarticons/admin/module
 packages
+*.zip

@@ -61,7 +61,7 @@ foreach ($groups as $group) :
 <?php 
 	else:
 ?>
-		<div class='alert'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></div>
+		<div class='alert' style='margin-top: 18px'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></div>
 <?php 
 	endif;
 ?>
