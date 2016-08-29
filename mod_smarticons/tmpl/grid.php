@@ -16,7 +16,7 @@ $firstTab = reset($groups);
 ?>
 <div class="wrapper">
 <?php 
-if ($tabNum > 1) : 
+if (($tabNum > 1) && ( (bool) $showTabs)) : 
 ?>
 	<ul class="nav nav-tabs">
 <?php 
@@ -34,10 +34,12 @@ if ($tabNum > 1) :
 endif;
 
 foreach ($groups as $group) :
-	$active = $group == $firstTab ? ' active' : '';
+	if ( (bool) $showTabs):
+		$active = $group == $firstTab ? ' active' : '';
 ?>
 		<div class="tab-pane<?php echo $active; ?>" id="<?php echo $group->alias . $group->id . $instance; ?>">
 <?php
+	endif;
 	if (isset($group->icons) && !empty($group->icons)):
 		foreach ($group->icons as $icon) :
 			$button = SmartIconsHelper::button($icon, $layout);
@@ -57,15 +59,19 @@ foreach ($groups as $group) :
 			</div>
 <?php 
 		endforeach;
-	else:?>
+	else:
+		if ( (bool) $showTabs):?>
 	<div class='alert'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></div>
 <?php 
+		endif;
 	endif;
+	if ( (bool) $showTabs):
 ?>
 		</div>
 <?php 
+	endif;
 endforeach;
-if ($tabNum > 1) :
+if (($tabNum > 1) && ( (bool) $showTabs)) : 
 ?>
 	</div>
 <?php 

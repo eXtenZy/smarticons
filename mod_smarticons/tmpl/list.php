@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 $tabNum = count($groups);
 $firstTab = reset($groups);
 
-if ($tabNum > 1) : 
+if (($tabNum > 1) && ( (bool) $showTabs)) : 
 ?>
 <ul class="nav nav-tabs" style="margin-bottom: 0px">
 <?php 
@@ -27,18 +27,26 @@ if ($tabNum > 1) :
 </ul>
 <div class="tab-content" style="clear:both">
 <?php 
+else:
+?>
+	<div class="row-striped">
+<?php 
 endif;
 
 foreach ($groups as $group) : 
-	$active = $group == $firstTab ? ' active' : '';
+	if ( (bool) $showTabs):
+		$active = $group == $firstTab ? ' active' : '';
 ?>
 	<div class="tab-pane<?php echo $active; ?>" id="<?php echo $group->alias . $group->id . $instance; ?>">
 		
-<?php 
+<?php
+	endif; 
 	if (isset($group->icons) && !empty($group->icons)):
+		if ( (bool) $showTabs):
 ?>
 		<div class="row-striped">
 <?php 
+		endif;
 		foreach ($group->icons as $icon) :
 			$button = SmartIconsHelper::button($icon, $layout);
 ?>
@@ -56,19 +64,26 @@ foreach ($groups as $group) :
 				</a>
 			</div>
 <?php
-		endforeach;?>
+		endforeach;
+		if ( (bool) $showTabs):?>
 		</div>
 <?php 
+		endif;
 	else:
+		if ( (bool) $showTabs):
 ?>
 		<div class='alert' style='margin-top: 18px'><?php echo JText::_('MOD_SMARTICONS_EMPTY'); ?></div>
 <?php 
+		endif;
 	endif;
+	if ( (bool) $showTabs):
 ?>
+	
 	</div>
 <?php 
+	endif;
 endforeach;
-if ($tabNum > 1) :?>
+if (($tabNum > 1) && ( (bool) $showTabs)) :?>
 </div>
 <?php 
 endif;

@@ -20,6 +20,7 @@ JFactory::getLanguage()->load('mod_quickicon');
 $groups				= SmartIconsHelper::getButtons();
 $componentConfig	= SmartIconsHelper::getComponentConfig()->toObject();
 $layout 			= $params->get('layout', '_:tree');
+$showTabs 			= $params->get('showtabs', '1');
 $mainframe			= JFactory::getApplication();
 $instance			= $mainframe->getUserState('mod_smarticons_instances', 0);
 
