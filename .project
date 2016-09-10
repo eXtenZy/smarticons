@@ -3,6 +3,7 @@
 	<name>SmartIcons V2.0</name>
 	<comment></comment>
 	<projects>
+		<project>Joomla36</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
