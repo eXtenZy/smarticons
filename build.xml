@@ -7,20 +7,6 @@
 	<property name="cfg.buildDir" value="packages" />
 	<property name="cfg.xmlfile" value="${cfg.buildDir}/files.txt" />
 
-
-	<!--config file values
-        cfg.name=paket
-        cfg.versionDir=v1_50
-        cfg.buildDir=packages
-        cfg.localhostRoot=../../www
-        cfg.xmlfile=files.txt
- 
-        ftp.server=
-        ftp.user=
-        ftp.password=
-        ftp.dir=        
-        -->
-
 	<!-- auto values but should be checked -->
 	<property name="cfg.comName" value="com_${cfg.name}" />
 	<property name="cfg.modName" value="mod_${cfg.name}" />
